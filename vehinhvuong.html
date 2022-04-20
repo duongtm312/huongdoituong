@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="868px" height="568px" style="border:1px solid #d3d3d3;"></canvas>
+<h3 id="display"></h3>
+
+</body>
+<script>
+    function square(x,y,a,b){
+        this.x =x;
+        this.y=y;
+        this.a=a;
+        this.b=b;
+        this.peri=(parseInt(a)+parseInt(b))*2
+        this.area = a*b
+        this.getPeriandArea = function (){
+            return "Chi vi là: "+this.peri+"Diện tích là :"+this.area;
+        }
+
+
+    }
+
+    function createSquare(){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var a = prompt("Nhập chiều rộng")
+        var b=prompt("Nhập chiều dài")
+        var Square=new square(500,200,a,b)
+        ctx.fillRect(Square.x,Square.y,Square.a,Square.b);
+        document.getElementById("display").innerHTML=Square.getPeriandArea()
+
+
+    }
+    createSquare()
+</script>
+</html>
