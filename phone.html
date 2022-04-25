@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class phone{
+        pin
+        messageTo
+        fromMessage
+        messageWasSend
+        onOff
+        constructor(pin,messageTo,fromMessage,messageWasSen,onOff) {
+            this.pin=pin;
+            this.messageTo=messageTo;
+            this.fromMessage=fromMessage;
+            this.messageWasSend=messageWasSen;
+            this.onOff=onOff;
+        }
+        checkOnOff(){
+            alert(this.onOff)
+        }
+        getOnOff(value){
+            this.onOff=value;
+        }
+        chargerPin(value){
+            this.pin=value;
+        }
+        setMessage(massage,phone){
+            phone.fromMessage=massage;
+            this.messageWasSend=massage;
+        }
+        seeMessage(){
+            return this.fromMessage;
+        }
+        seeMessageTo(){
+            return this.messageWasSend;
+        }
+    }
+    let iphone=new phone(100,"","","","On")
+</script>
+</body>
+</html>
