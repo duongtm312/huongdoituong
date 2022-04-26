@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        weight
+
+        constructor(apple) {
+            this.weight = apple;
+        }
+
+        apple() {
+            console.log("Apple weight" +this.weight)
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--
+            }
+        }
+
+        isEmpty() {
+            if (this.weight) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getWeight(){
+            return this.weight;
+        }
+    }
+    class Human{
+        name
+        gender
+        weight
+        constructor(name,gender,weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        human(){
+            console.log("Name "+this.name+",Gender "+this.gender+" Weight "+this.weight)
+        }
+        isMale(){
+            if (this.gender.toLowerCase()=="male"){
+                return true
+            }else {
+                return false
+            }
+        }
+        setGender(sex){
+            this.gender=sex;
+        }
+        checkApple(name){
+            if (name.weight){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        eatApple(apple){
+            if (this.checkApple(apple)){
+                this.weight++
+                apple.weight--
+
+            }else {
+                console.log("Hết rồi")
+            }
+        }
+        say(something){
+            console.log(something)
+
+        }
+        getName(){
+            return this.name
+        }
+        set name(name){
+            this.name=name;
+        }
+        getWeight(weight){
+            return this.weight
+        }
+        setWeight(weight){
+            this.weight=weight;
+        }
+    }
+    let apple=new Apple(1);
+    apple.apple()
+    let adam=new Human("Adam","Male",50);
+    let eva = new Human("Eva","Female",45);
+    adam.checkApple(apple);
+    adam.eatApple(apple)
+    console.log(apple.weight)
+    console.log(adam.weight)
+    adam.say("CMM");
+    eva.checkApple(apple);
+    eva.eatApple(apple);
+    console.log(apple.weight);
+    console.log(eva.weight)
+</script>
+</body>
+</html>
